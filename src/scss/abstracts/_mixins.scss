@@ -6,7 +6,11 @@
   color: $color;
 }
 // text dimensions mixin end
-
+@mixin df($jc, $ai){
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
 // mobile mixin start
 @mixin m_query($deviceType) {
   @if $deviceType == phone {
@@ -14,13 +18,13 @@
       @content;
     }
   }
+  // @if $deviceType == tablet {
+  //   @media (max-width: 765px) and (min-width: 576px) {
+  //     @content;
+  //   }
+  // }
   @if $deviceType == tablet {
-    @media (max-width: 765px) and (min-width: 576px) {
-      @content;
-    }
-  }
-  @if $deviceType == tablet_two {
-    @media (max-width: 992px) and (min-width: 765px) {
+    @media (max-width: 992px) and (min-width: 576px) {
       @content;
     }
   }
